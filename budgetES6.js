@@ -124,9 +124,28 @@ const UIitems = (() => {
 		newDOMitem: (newObj, type) => {
 			let elHtml, newEl;
 			if(type === 'inc'){
-				elHtml = '<div class="item clearfix" id="inc-%Id"><div class="item__description">%txt</div><div class="right clearfix"><div class="item__value">%val</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
+				elHtml =`<div class="item clearfix" id="inc-%Id">
+							<div class="item__description">%txt</div>
+							<div class="right clearfix">
+								<div class="item__value">%val</div>
+								<div class="item__delete">
+									<button class="item__delete--btn">
+										<i class="ion-ios-close-outline"></i>
+									</button>
+								</div>
+							</div>
+						</div>`
 			}else if(type === 'exp'){
-				elHtml = '<div class="item clearfix" id="exp-%Id"><div class="item__description">%txt</div><div class="right clearfix"><div class="item__value">%val</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
+				elHtml = `  <div class="item clearfix" id="exp-%Id">
+								<div class="item__description">%txt</div>
+								<div class="right clearfix">
+								<div class="item__value">%val</div>
+									<div class="item__percentage">21%</div>
+									<div class="item__delete">
+										<button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+									</div>
+								</div>
+							</div>`
 			}
 			//console.log(formatNumber(Number(newObj.val)));
 			newEl = elHtml.replace('%Id', newObj.Id);
